@@ -1,6 +1,14 @@
+import 'dart:io';
+
 import 'package:chopmoni_app/config/constants_colors.dart';
 import 'package:chopmoni_app/config/image_url.dart';
+import 'package:chopmoni_app/register_screen/register_screen.dart';
+import 'package:chopmoni_app/sign_in_screen/sign_in_screen.dart';
+import 'package:chopmoni_app/widgets/circle_icon_button.dart';
+import 'package:chopmoni_app/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/route_manager.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -26,21 +34,49 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _customButton(
-                    text: 'Register',
-                    buttonColor: blackTextColor,
-                    textColor: greenTextColor,
-                    onBtnPressed: () {},
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CustomButtons(
+                        text: 'Register',
+                        buttonColor: blackTextColor,
+                        textColor: greenTextColor,
+                        onBtnPressed: () =>
+                            Get.to(() => const RegisterScreen()),
+                      ),
+                      CustomButtons(
+                        text: 'Sign In',
+                        buttonColor: Colors.white,
+                        textColor: blackTextColor,
+                        onBtnPressed: () => Get.to(() => const SignInScreen()),
+                      ),
+                    ],
                   ),
-                  _customButton(
-                    text: 'Sign In',
-                    buttonColor: Colors.white,
-                    textColor: blackTextColor,
-                    onBtnPressed: () {},
-                  )
+                  const SizedBox(height: 30),
+                  const Text('or Continue with'),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircleIconButton(
+                        icon: const Icon(FontAwesomeIcons.google),
+                        onPressed: () {
+                          // google login
+                        },
+                      ),
+                      if (Platform.isIOS) const SizedBox(width: 30),
+                      if (Platform.isIOS)
+                        CircleIconButton(
+                          icon: const Icon(FontAwesomeIcons.apple),
+                          onPressed: () {
+                            // apple login
+                          },
+                        ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -59,26 +95,6 @@ class SplashScreen extends StatelessWidget {
             )
           ],
         ),
-      ),
-    );
-  }
-
-  _customButton({
-    required String text,
-    required Color buttonColor,
-    required Color textColor,
-    required Function() onBtnPressed,
-  }) {
-    return MaterialButton(
-      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-      color: buttonColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      onPressed: onBtnPressed,
-      child: Text(
-        text,
-        style: TextStyle(color: textColor),
       ),
     );
   }
