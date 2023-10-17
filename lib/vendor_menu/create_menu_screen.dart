@@ -29,7 +29,6 @@ class CreateMenuScreen extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            // height: 250,
             margin: const EdgeInsets.all(20),
             padding: const EdgeInsets.symmetric(horizontal: 15),
             decoration: BoxDecoration(

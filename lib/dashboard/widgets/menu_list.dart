@@ -33,7 +33,7 @@ class MenuList extends StatelessWidget {
           children: [
             icon,
             Padding(
-              padding: const EdgeInsets.only(left: 10.0),
+              padding: const EdgeInsets.only(left: 9),
               child: Text(
                 text,
                 style: const TextStyle(

@@ -137,19 +137,7 @@ class RegisterScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                // const Text(
-                //   'CHOPMONI',
-                //   style: TextStyle(
-                //     color: blackTextColor,
-                //     fontWeight: FontWeight.bold,
-                //   ),
-                // ),
-                // const Text(
-                //   'Terms and Privacy Policy notice.',
-                //   style: TextStyle(
-                //     color: appGreyColor,
-                //   ),
-                // )
+                
               ],
             ),
           ),

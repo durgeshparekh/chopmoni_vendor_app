@@ -17,6 +17,7 @@ dependencies:
   font_awesome_flutter: ^10.5.0
   google_sign_in: ^6.1.5
   sign_in_with_apple: ^5.0.0
+  fading_edge_scrollview: ^3.0.0
 
 dev_dependencies:
   flutter_test:
