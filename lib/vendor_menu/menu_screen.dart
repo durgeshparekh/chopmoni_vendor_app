@@ -18,6 +18,7 @@ class MenuScreen extends StatelessWidget {
           'Menu',
           style: TextStyle(
             fontWeight: FontWeight.bold,
+            color: blackTextColor,
           ),
         ),
       ),

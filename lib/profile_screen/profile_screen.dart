@@ -15,7 +15,13 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profile'),
+        title: const Text(
+          'Profile',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: blackTextColor,
+          ),
+        ),
       ),
       body: Column(
         children: [
@@ -42,7 +48,8 @@ class ProfileScreen extends StatelessWidget {
                     width: 70,
                     height: 70,
                   ),
-                  onPressed: () => Get.to(() => const BusinessInformationScreen()),
+                  onPressed: () =>
+                      Get.to(() => const BusinessInformationScreen()),
                 ),
               ],
             ),

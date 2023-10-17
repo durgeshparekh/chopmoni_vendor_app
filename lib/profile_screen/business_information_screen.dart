@@ -15,7 +15,6 @@ class BusinessInformationScreen extends StatelessWidget {
       backgroundColor: lightBackgroundColor,
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        leading: BackButton(onPressed: () => Get.back()),
         title: const Text(
           'Business Information',
           style: TextStyle(fontWeight: FontWeight.bold),

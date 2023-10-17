@@ -1,32 +1,27 @@
 import 'package:chopmoni_app/config/constants_colors.dart';
 import 'package:chopmoni_app/config/image_url.dart';
+import 'package:chopmoni_app/controllers/order_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class PaymentsScreen extends StatelessWidget {
-  const PaymentsScreen({super.key});
+class CompleteOrdersScreen extends StatelessWidget {
+  const CompleteOrdersScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Payments',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: blackTextColor,
-          ),
-        ),
-      ),
-      body: SizedBox(
-        child: ListView.builder(
-          itemCount: 100,
-          itemBuilder: (context, index) {
-            return Container(
+    var controller = Get.find<OrderController>();
+    return SizedBox(
+      child: ListView.builder(
+        itemCount: 100,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () => controller.onCompletedOrderClick(index),
+            child: Container(
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
                 children: [
@@ -62,6 +57,7 @@ class PaymentsScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  // const SizedBox(width: 10),
                   const Spacer(),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -93,7 +89,7 @@ class PaymentsScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: Text(
-                          'Take Out',
+                          'Eat In',
                           style: TextStyle(
                             color: Colors.blue.shade900,
                             fontWeight: FontWeight.bold,
@@ -104,9 +100,9 @@ class PaymentsScreen extends StatelessWidget {
                   ),
                 ],
               ),
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }
