@@ -1,4 +1,4 @@
-package com.example.chopmoni_app
+package com.app.chopmoni_app
 
 import io.flutter.embedding.android.FlutterActivity
 
